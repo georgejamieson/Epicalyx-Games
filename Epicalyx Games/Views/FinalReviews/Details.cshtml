@@ -1,0 +1,43 @@
+﻿@model EpicalyxGame.Models.FinalReview
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>FinalReview</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Review)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Review)
+           
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FinalRating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FinalRating)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Game)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Game.GameName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.Username)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FinalReviewID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<EpicalyxGame.Models.AspectReview>
+
+@{
+    ViewData["Title"] = "Aspect Reviews";
+}
+
+<h1>Aspect Reviews</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    
+<form asp-action="Index" method="get">
+<div class="form-actions no-color">
+<p>
+Find by review by Game: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+<input type="submit" value="Search" class="btn btn-default" /> |
+<a asp-action="Index">Back to Full List</a>
+</p>
+</div>
+</form>
+
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoryRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoundtrackRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraphicsRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameplayRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MultiplayerRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoryCompletion) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCompletion)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Game.GameName)
+            </td>
+  
+            <td>
+                @Html.DisplayFor(modelItem => item.StoryRating)
+                ★
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoundtrackRating)
+                ★
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GraphicsRating)
+                ★
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameplayRating)
+                ★
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MultiplayerRating)
+               ★
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoryCompletion)
+                %
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCompletion)
+                %
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AspectReviewID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AspectReviewID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AspectReviewID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

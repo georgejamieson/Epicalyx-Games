@@ -1,0 +1,37 @@
+﻿@model EpicalyxGame.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProfilePic)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProfilePic)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.UserID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

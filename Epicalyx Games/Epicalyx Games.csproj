@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-Epicalyx_Games-8EECA558-6E82-4312-A925-3224845B3EE6</UserSecretsId>
+    <RootNamespace>Epicalyx_Games</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="\\avcol.school.nz\Personal\Students\ac111480\Documents\My Pictures\ac111480.ico" Link="ac111480.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.14" />
+  </ItemGroup>
+
+</Project>

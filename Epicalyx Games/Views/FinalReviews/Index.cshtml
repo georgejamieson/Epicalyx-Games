@@ -1,0 +1,72 @@
+﻿@model IEnumerable<EpicalyxGame.Models.FinalReview>
+
+@{
+    ViewData["Title"] = "Final Reviews";
+}
+
+<h1>Final Reviews</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    
+<form asp-action="Index" method="get">
+<div class="form-actions no-color">
+<p>
+Find by review by Game: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+<input type="submit" value="Search" class="btn btn-default" /> |
+<a asp-action="Index">Back to Full List</a>
+</p>
+</div>
+</form>
+
+
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Review)
+            </th>
+              <th>
+                @Html.DisplayNameFor(model => model.Game)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinalRating)
+            </th>
+          
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.User.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Review)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Game.GameName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalRating)
+                 ★
+            </td>
+           
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FinalReviewID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FinalReviewID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FinalReviewID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
