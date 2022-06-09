@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="icon" type="image/x-icon" href="~/images/myphoto.ico" />
+    <link rel="stylesheet" href="dark-mode.css">
+    <script src="dark-mode-switch.min.js"></script>
 </head>
 <body>
     <header>
@@ -38,7 +40,32 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="AspectReviews" asp-action="Index">Aspect Reviews</a>
                         </li>
                     </ul>
+                    
+                      
+                     
+                     </div>
+                     <label class="switch">
+                     
+                     <span class="slider round"></span>
+                     <input type="checkbox" id= "darkSwitch" onclick= "darkModeFunction">
+                     </label>
+          
                     <button onclick="darkModeFunction()"> Dark Mode</button>
+                    <script>
+                    function darkModeFunction() 
+                    {
+                    var element = document.body;
+                    var checkBox = document.getElementById("darkSwitch")
+                    
+                     if (darkSwitch.checked== true)
+                    {
+                    element.classList.toggle("dark-mode");
+                    }
+                       
+                   
+                     
+                   
+                     </script>
                    
                     <partial name="_LoginPartial" />
                 </div>

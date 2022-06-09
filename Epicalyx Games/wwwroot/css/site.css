@@ -7,7 +7,7 @@ a.navbar-brand {
   word-break: break-all;
 }
 .dark-mode {
-    background-color: black;
+    background-color:rgb(69, 69, 69);
     color: white;
 }
 
