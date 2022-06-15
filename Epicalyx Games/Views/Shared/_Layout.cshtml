@@ -9,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="~/images/myphoto.ico" />
     <link rel="stylesheet" href="dark-mode.css">
     <script src="dark-mode-switch.min.js"></script>
+    
 </head>
 <body>
     <header>
@@ -47,11 +48,12 @@
                      <label class="switch">
                      
                      <span class="slider round"></span>
-                     <input type="checkbox" id= "darkSwitch" onclick= "darkModeFunction">
+                     <input type="checkbox" id= "darkSwitch" onclick= "darkModeFunction()">
                      </label>
           
-                    <button onclick="darkModeFunction()"> Dark Mode</button>
+                    
                     <script>
+                       
                     function darkModeFunction() 
                     {
                     var element = document.body;
@@ -60,6 +62,7 @@
                      if (darkSwitch.checked== true)
                     {
                     element.classList.toggle("dark-mode");
+                    
                     }
                        
                    
