@@ -1,17 +1,21 @@
-﻿@model IEnumerable<EpicalyxGame.Models.FinalReview>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<EpicalyxGame.Models.FinalReview>
 
 @{
     ViewData["Title"] = "Final Reviews";
 }
 
 <h1>Final Reviews</h1>
-
+@if (SignInManager.IsSignedIn(User)) { }
 <p>
     <a asp-action="Create">Create New</a>
-    
+
 <form asp-action="Index" method="get">
 <div class="form-actions no-color">
 <p>
+
 Find by review by Game: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
 <input type="submit" value="Search" class="btn btn-default" /> |
 <a asp-action="Index">Back to Full List</a>
