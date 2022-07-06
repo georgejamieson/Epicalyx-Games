@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EpicalyxGame.Models;
+using Epicalyx_Games;
 
 namespace EpicalyxGame.Views
 {
@@ -19,9 +20,13 @@ namespace EpicalyxGame.Views
         }
 
         // GET: Games
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber )
         {
-            return View(await _context.Game.ToListAsync());
+             pageNumber = 1;
+            int pageSize = 10;
+            var game = from s in _context.Game
+                       select s;
+            return View(await PaginatedList<Game>.CreateAsync(game.AsNoTracking(), pageNumber, pageSize));
         }
 
         // GET: Games/Details/5
