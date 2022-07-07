@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using EpicalyxGame.Models;
 using Epicalyx_Games;
 
+
 namespace EpicalyxGame.Views
 {
     public class GamesController : Controller
