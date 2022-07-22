@@ -8,24 +8,25 @@
 }
 
 <h1>Final Reviews</h1>
-<!--@if (SignInManager.IsSignedIn(User))--> { }
-<p>
-    <a asp-action="Create">Create New</a>
+@if (SignInManager.IsSignedIn(User))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
 
-<form asp-action="Index" method="get">
-<div class="form-actions no-color">
-<p>
+        <form asp-action="Index" method="get">
+            <div class="form-actions no-color">
+                <p>
 
-Find by review by Game: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
-<input type="submit" value="Search" class="btn btn-default" /> |
-<a asp-action="Index">Back to Full List</a>
-</p>
-</div>
-</form>
+                    Find by review by Game: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+                    <input type="submit" value="Search" class="btn btn-default" /> |
+                    <a asp-action="Index">Back to Full List</a>
+                </p>
+            </div>
+        </form>
 
 
-</p>
-
+    </p>
+}
 
 <table class="table">
     <thead>
