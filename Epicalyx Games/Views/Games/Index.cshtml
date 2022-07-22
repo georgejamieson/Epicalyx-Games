@@ -9,29 +9,40 @@
 }
 
 <h1>Games</h1>
-@if (SignInManager.IsSignedIn(User))
-{
+
+
     <p>
         <a asp-action="Create">Create New</a>
     </p>
-}
+    <form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-               Game Name
+              <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Game Name</a>
             </th>
             <th>
-                Age Rating
+                 <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Age Rating</a>
             </th>
             <th>
-               Genre
+                 <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Genre</a>
+              
             </th>
             <th>
-               Publisher
+                 <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Publisher</a>
+              
             </th>
             <th>
-               Release Year
+                 <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Release Year</a>
+               
             </th>
             <th></th>
         </tr>

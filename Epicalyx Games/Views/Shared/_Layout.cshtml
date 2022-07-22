@@ -71,6 +71,8 @@
                      </script>
                    
                     <partial name="_LoginPartial" />
+                  <img src="~/images~/images/moon.png" id=icon/>
+
                 </div>
             </div>
         </nav>
@@ -89,6 +91,42 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+    var icon = document.getElementById("icon");
+
+    if (localStorage.getItem("theme") == null)
+    {
+        localStorage.setItem("theme", "light")
+    }
+    
+
+    let localData = localStorage.getItem("theme")
+    if(localData == "light")
+    {
+        icon.src = "images/moon.png"
+        document.body.classList.remove("dark-mode")
+    }
+    else if(localData == "dark")
+    {
+         icon.src = "images/sun.png"
+        document.body.classList.add("dark-mode")
+    }
+    icon.onclick = function(){
+        
+        document.body.classList.toggle("dark-mode")
+        if(document.body.classList.contains("dark-mode"))
+        {
+            icon.src ="images/sun.png";
+             localStorage.setItem("theme", "dark")
+        }
+        else 
+        {
+            icon.src = "images/moon.png"
+             localStorage.setItem("theme", "light")
+        }
+       
+    }
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

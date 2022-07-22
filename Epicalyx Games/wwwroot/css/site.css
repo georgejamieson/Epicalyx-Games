@@ -1,32 +1,74 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-
+body{
+    background-color:var(--primary-colour);
+    color: var(--secondary-colour);
+    text-decoration-color:var(--secondary-colour);
+    
+}
+.nav
+a.btn{
+    color: var(--secondary-colour);
+    background: var(--primary-colour);
+}
+a.bg-white {
+    color: var(--secondary-colour);
+    background: var(--primary-colour);
+}
 a.navbar-brand {
-  white-space: normal;
+    background-color:var(--primary-colour);
+    color: var(--secondary-colour);
+    outline-color:var(--secondary-colour);
   text-align: center;
   word-break: break-all;
 }
-.dark-mode {
-    background-color:rgb(69, 69, 69);
-    color: white;
+a.header {
+    color: var(--secondary-colour);
+    background: var(--primary-colour);
 }
-
-
+.dark-mode {
+    --primary-colour: #121010;
+    --secondary-colour: #fff
+}
+.navbar-brand {
+    color: var(--secondary-colour);
+    background-color: var(--primary-colour)
+}
+.div{
+    color: var(--secondary-colour);
+    background-color: var(--primary-colour)
+}
+.box-shadow {
+    color: var(--secondary-colour);
+    background-color: var(--primary-colour)
+}
+.bg-white {
+    color: var(--secondary-colour);
+    background-color: var(--primary-colour)
+}
+:root {
+    --primary-colour: #edf2fc;
+    --secondary-colour: #000000;
+}
+.table{
+    color: var(--secondary-colour);
+    text-decoration-color: var(--secondary-colour);
+}
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: var(--secondary-colour);
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  color: var(--secondary-colour);
+  background-color:var(--primary-colour);
+  border-color: var(--secondary-colour);
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  color: var(--secondary-colour);
+  background-color: var(--primary-colour);
+  border-color: var(--secondary-colour);
 }
 
 /* Sticky footer styles
@@ -41,14 +83,15 @@ html {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--primary-colour);
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid var(--primary-colour);
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .25rem .75rem var(--primary-colour);
+  color: var(--secondary-colour)
 }
 
 button.accept-policy {
@@ -71,7 +114,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  white-space: nowrap;
+  background-color var(--primary-colour);
   line-height: 60px; /* Vertically center the text there */
 
 }
@@ -137,3 +180,4 @@ input:checked + .slider:before {
     .slider.round:before {
         border-radius: 50%;
     }
+ 

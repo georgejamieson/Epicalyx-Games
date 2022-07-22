@@ -21,13 +21,50 @@ namespace EpicalyxGame.Views
         }
 
         // GET: Games
-        public async Task<IActionResult> Index(int pageNumber )
+        public async Task<IActionResult> Index(string sortOrder, int? pageNumber, string searchString, string currentFilter)
         {
-             pageNumber = 1;
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["GameNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["FirstNameSortParm"] = sortOrder == "Publisher" ? "FirstName_desc" : "FirstName";
+            ViewData["HomeRoomSortParm"] = sortOrder == "Genre" ? "HomeRoom_desc" : "HomeRoom";
+
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+           
+
+            ViewData["CurrentFilter"] = searchString;
+            var games = from s in _context.Game
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                games = games.Where(s => s.GameName.Contains(searchString)
+                                       || s.GameName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    games = games.OrderByDescending(s => s.GameName);
+                    break;
+                case "publisher":
+                    games = games.OrderBy(s => s.Publisher);
+                    break;
+               
+                default:
+                    games = games.OrderBy(s => s.GameName);
+                    break;
+            }
             int pageSize = 10;
-            var game = from s in _context.Game
-                       select s;
-            return View(await PaginatedList<Game>.CreateAsync(game.AsNoTracking(), pageNumber, pageSize));
+            return View(await PaginatedList<Game>.CreateAsync(games.AsNoTracking(), pageNumber ?? 1, pageSize));
+
+            
+           
         }
 
         // GET: Games/Details/5
