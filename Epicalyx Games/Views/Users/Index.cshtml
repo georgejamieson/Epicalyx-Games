@@ -25,9 +25,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.DateOfBirth)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProfilePic)
-            </th>
+           
             
             <th></th>
         </tr>
@@ -41,9 +39,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.DateOfBirth)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProfilePic)
-            </td>
+           
             
             <td>
                 <a asp-action="Edit" asp-route-id="@item.UserID">Edit</a> |

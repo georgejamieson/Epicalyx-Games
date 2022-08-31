@@ -15,7 +15,7 @@ namespace EpicalyxGame.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         
         public DateTime DateOfBirth { get; set; }
-        public int ProfilePic { get; set; }
+       
 
        
 

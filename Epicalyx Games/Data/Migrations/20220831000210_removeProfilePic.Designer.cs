@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Epicalyx_Games.Data.Migrations
 {
     [DbContext(typeof(EpicalyxGamesContextDb))]
-    [Migration("20220525230532_idk")]
-    partial class idk
+    [Migration("20220831000210_removeProfilePic")]
+    partial class removeProfilePic
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -131,8 +131,6 @@ namespace Epicalyx_Games.Data.Migrations
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
-
-                    
 
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");

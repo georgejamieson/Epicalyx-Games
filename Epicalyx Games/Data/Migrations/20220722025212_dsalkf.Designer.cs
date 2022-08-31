@@ -132,8 +132,6 @@ namespace Epicalyx_Games.Data.Migrations
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ProfilePic")
-                        .HasColumnType("int");
 
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");

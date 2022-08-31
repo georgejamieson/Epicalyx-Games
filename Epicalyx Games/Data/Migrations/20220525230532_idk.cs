@@ -32,7 +32,7 @@ namespace Epicalyx_Games.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ProfilePic = table.Column<int>(type: "int", nullable: false)
+                   
                 },
                 constraints: table =>
                 {
